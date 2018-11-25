@@ -16,7 +16,7 @@ app.get('/', (req,res)=>{
     res.send('index')
 });
 
-mongoose.connect('mongodb://alexzam1:alexzam1@ds115154.mlab.com:15154/dbrivka',{ useNewUrlParser: true } ,(err, res)=>{
+mongoose.connect(db,{ useNewUrlParser: true } ,(err, res)=>{
     if( err ) throw err;
 
     console.log("Base de datos ONLINE");
