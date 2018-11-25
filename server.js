@@ -12,6 +12,10 @@ app.use(require('./CRUDs/login'))
 app.use(require('./CRUDs/proyecto'));
 app.use(require('./CRUDs/employee'));
 
+app.get('/', (req,res)=>{
+    res.send('index')
+});
+
 mongoose.connect('mongodb://alexzam1:alexzam1@ds115154.mlab.com:15154/dbrivka',{ useNewUrlParser: true } ,(err, res)=>{
     if( err ) throw err;
 
