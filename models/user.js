@@ -30,10 +30,6 @@ let usuarioSchema = new Schema({
     type: String,
     default: "USER_ROLE",
     enum: rolesValidos
-  },
-  account_delete: {
-    type: Boolean,
-    default: 0
   }
 });
 

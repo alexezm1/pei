@@ -8,7 +8,7 @@ process.env.PORT = process.env.PORT || 3000;
 // Seed Token
 // =========================
 
-process.env.SEED = "seed-de-desarrollo" ||  process.env.SEED;
+process.env.SEED = process.env.SEED || "seed-de-desarrollo" ;
 
 
 // =========================
