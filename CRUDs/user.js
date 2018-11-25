@@ -62,16 +62,27 @@ app.put('/user/:uid',verificarToken, (req,res)=>{
     })
 });
 
-app.delete('/user/:uid',verificarToken, (req,res)=>{
-    const{uid} = req.params
+function deleteUser (req,res){
 
-    User.findByIdAndRemove(uid).exec()
-    .then(user =>{
-        res.status(200).send()
+    let user = {
+        account_delete: 1,
+    };
+
+    User.findByIdAndUpdate(req.userData.user._id, user, {new:true}, (err, UserDB)=>{
+        if(err){
+            return res.status(400).json({
+                ok:false,
+                message:"Ocurrio un error",
+            })
+        }
+
+        return res.status(200).json({
+            ok:true,
+            message:"Se elimino la cuenta",
+        })
     })
-    .catch(err =>{
-        res.status(404).send(err)
-    })
-});
+}
+
+app.delete('/user', verificarToken, deleteUser);
 
 module.exports = app;

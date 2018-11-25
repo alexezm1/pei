@@ -30,7 +30,19 @@ let usuarioSchema = new Schema({
     type: String,
     default: "USER_ROLE",
     enum: rolesValidos
-  }
+  },
+  account_delete:{
+    type:Boolean,
+    default: 0,
+}
 });
+
+usuarioSchema.methods.toJSON = function(){
+let user = this;
+let userObject = user.toObject();
+delete userObject.password;
+
+return userObject;
+};
 
 module.exports = mongoose.model('User', usuarioSchema);
