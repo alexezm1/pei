@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const { verificarToken } = require('../middlewares/autentication')
+//
 
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
