@@ -8,7 +8,7 @@ app.use(require('./CRUDs/user_employee'));
 app.use(require('./CRUDs/hardware'));
 app.use(require('./CRUDs/software'));
 app.use(require('./CRUDs/user'));
-app.use(require('./CRUDS/login'));
+app.use(require('./CRUDs/login'));
 app.use(require('./CRUDs/proyecto'));
 //app.use(require('./CRUDs/habilidad'));
 app.use(require('./CRUDs/employee'));
