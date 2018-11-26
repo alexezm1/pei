@@ -12,9 +12,10 @@ app.use(bodyParser.json())
 app.use(cors())
 
 app.post('/proyecto',verificarToken, (req,res)=>{
-    const{clasificacion,cliente,employee,fecha_inic,fecha_fin} = req.body
+    const{proyecto, clasificacion,cliente,employee,fecha_inic,fecha_fin} = req.body
 
     let nuevoProyecto = Proyecto({
+        proyecto,
         clasificacion,
         cliente,
         employee,

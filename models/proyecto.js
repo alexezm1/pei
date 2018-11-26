@@ -7,6 +7,7 @@ const Schema = mongoose.Schema
 
 const proyectoSchema = new Schema({
     id: ObjectId,
+    proyecto: String,
     clasificacion: String,
     cliente : {
         type: ObjectId,
