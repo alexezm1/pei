@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Empleado = require('./user');
 const Cliente = require('./cliente')
+//
 
 const Schema = mongoose.Schema
     ObjectId = Schema.ObjectId
