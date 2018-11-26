@@ -30,9 +30,12 @@ app.post('/proyecto',verificarToken, (req,res)=>{
 });
 
 app.get('/proyecto',verificarToken, (req,res)=>{
-    Proyecto.find().exec()
+    Proyecto.find({})
+    .populate({path: 'cliente', model: Cliente})
+    .populate({path: 'employee', model: Empleado})
+    .exec()
     .then(proyecto =>{
-        res.send(proyecto)
+        res.status(200).send(proyecto)
     })
     .catch(err =>{
         res.status(404).send(err)
